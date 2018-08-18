@@ -6,13 +6,13 @@ module.exports = function(app){
     });
 
     app.post('/api/friends', function(req, res){
-        var user = req.body;
+        var newUser = req.body;
 
-        console.log(user);
+        console.log(newUser);
 
         // var userScores = [1, 2, 1, 1, 2, 2, 2, 1, 1, 5];
-        var userScores = user.scores;
-        // friends.push(newUser);
+        var userScores = newUser.scores;
+       
         var chosenDifference = 1000;
         var chosenFriend;
 
@@ -27,7 +27,7 @@ module.exports = function(app){
             }
         }
         // console.log(friends);
-        friends.push(user);
+        friends.push(newUser);
         res.json(chosenFriend);
     });
 }
